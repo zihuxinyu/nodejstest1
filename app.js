@@ -56,4 +56,10 @@ app.use(function(err, req, res, next) {
 });
 
 
+
+app.use(function(req, resp, next) {
+    resp.removeHeader('X-Powered-By');
+    next();
+});
+
 module.exports = app;
